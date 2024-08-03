@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+<body>
+    <h1>User Page</h1>
+    <h2>Welcome, {{ member_name }}</h2>
+    <h2>Books</h2>
+    <ul>
+        {% for book in books %}
+        <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Take Book</h3>
+    <form method="post" action="{{ url_for('take_book_route') }}">
+        <label for="book_name">Book Name:</label>
+        <input type="text" id="book_name" name="book_name" required>
+        <input type="hidden" name="member_name" value="{{ member_name }}">
+        <br>
+        <button type="submit">Take Book</button>
+    </form>
+    <h3>Return Book</h3>
+    <form method="post" action="{{ url_for('return_book_route') }}">
+        <label for="book_name">Book Name:</label>
+        <input type="text" id="book_name" name="book_name" required>
+        <input type="hidden" name="member_name" value="{{ member_name }}">
+        <br>
+        <button type="submit">Return Book</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
