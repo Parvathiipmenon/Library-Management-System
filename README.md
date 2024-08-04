@@ -1,3 +1,4 @@
+LIBRARY MANAGEMENT SYSTEM
 The Library Management System (LMS) is a project that was created to 
 computerize and automate library activities for their efficient management. 
 This project replaces the manual handling of library tasks with a 
